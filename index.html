@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ConstruLi&ma</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header>
+    <div class="tituloinicial">
+      <h1>ConstruLi&ma</h1>
+      <h4>Materiais de Construção</h4>
+    </div>
+
+    <div class="search-container">
+      <input type="text"
+        id="search"
+        placeholder="Buscar Item..."
+        onkeyup="filtrar()" />
+      <span class="material-icons search-icon">search</span>
+    </div>
+
+    <nav class="header-links">
+      <a href="#" id="a1"
+        ><i class="material-icons">person</i> Fale <br />Conosco</a
+      >
+      <a href="#"
+        ><i class="material-icons">add_shopping_cart</i> Meu <br />Carrinho</a
+      >
+    </nav>
+  </header>
+
+  <ul id="lista">
+    <li>html</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>React</li>
+  </ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
