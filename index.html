@@ -1,47 +1,208 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ConstruLi&ma</title>
-  <link rel="stylesheet" href="style.css" />
-  <link
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet"
-  />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ConstruLi&ma</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="tituloinicial">
-      <h1>ConstruLi&ma</h1>
-      <h4>Materiais de Construção</h4>
-    </div>
 
-    <div class="search-container">
-      <input type="text"
-        id="search"
-        placeholder="Buscar Item..."
-        onkeyup="filtrar()" />
-      <span class="material-icons search-icon">search</span>
-    </div>
+<!-- CABEÇALHO -->
+<header>
+  <div class="tituloinicial">
+    <h1>ConstruLi&ma</h1>
+    <h4>Materiais de Construção</h4>
+  </div>
 
-    <nav class="header-links">
-      <a href="#" id="a1"
-        ><i class="material-icons">person</i> Fale <br />Conosco</a
-      >
-      <a href="#"
-        ><i class="material-icons">add_shopping_cart</i> Meu <br />Carrinho</a
-      >
-    </nav>
-  </header>
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Buscar Item..." onkeyup="filtrar()">
+    <span class="material-icons search-icon">search</span>
+  </div>
 
-  <ul id="lista">
-    <li>html</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>React</li>
+  <nav class="header-links">
+    <a href="#" id="a1"><i class="material-icons">person</i> Fale <br>Conosco</a>
+    <a href="#"><i class="material-icons">add_shopping_cart</i> Meu <br>Carrinho</a>
+  </nav>
+</header>
+
+<!-- MENU PRINCIPAL -->
+<main>
+  <ul class="menu-principal">
+
+    <!-- Todas as categorias -->
+    <li class="naosei">
+      <a href="#" class="botao-menu">
+        <i class="material-icons">menu</i> Todas as categorias
+      </a>
+      <div class="submenu mega-menu">
+        <div class="colunas">
+          <a href="#">Lâmpadas</a>
+          <a href="#">Vasos</a>
+          <a href="#">Tintas</a>
+          <a href="#">Canos</a>
+          <a href="#">Mesas</a>
+          <a href="#">Cadeiras</a>
+        </div>
+        <div class="imagem">
+          <img src="imagens/Material-para-construção-640x305.jpg" alt="Imagem Mega Menu">
+        </div>
+      </div>
+    </li>
+
+    <!-- Ofertas -->
+    <li class="naosei">
+      <a href="#" class="botao-menu">Ofertas</a>
+      <div class="submenu">
+        <a href="#">Oferta 1</a>
+        <a href="#">Oferta 2</a>
+        <a href="#">Oferta 3</a>
+      </div>
+    </li>
+
+    <!-- Metais -->
+    <li class="naosei">
+      <a href="#" class="botao-menu">Metais</a>
+      <div class="submenu">
+        <a href="#">Torneiras</a>
+        <a href="#">Canos</a>
+        <a href="#">Conexões</a>
+      </div>
+    </li>
+
+    <!-- Tintas -->
+    <li class="naosei">
+      <a href="#" class="botao-menu">Tintas</a>
+      <div class="submenu">
+        <a href="#">Acrílicas</a>
+        <a href="#">Esmaltes</a>
+        <a href="#">Spray</a>
+      </div>
+    </li>
+
+    <!-- Móveis -->
+    <li class="naosei">
+      <a href="#" class="botao-menu">Móveis</a>
+      <div class="submenu">
+        <a href="#">Mesas</a>
+        <a href="#">Cadeiras</a>
+        <a href="#">Estantes</a>
+      </div>
+    </li>
+
+    <!-- Ambiente -->
+    <li class="naosei">
+      <a href="#" class="botao-menu">Ambiente</a>
+      <div class="submenu">
+        <a href="#">Jardim</a>
+        <a href="#">Decoração</a>
+        <a href="#">Iluminação</a>
+      </div>
+    </li>
+
+    <!-- Banheiro -->
+    <li class="naosei">
+      <a href="#" class="botao-menu">Banheiro</a>
+      <div class="submenu">
+        <a href="#">Pias</a>
+        <a href="#">Box</a>
+        <a href="#">Acessórios</a>
+      </div>
+    </li>
+
   </ul>
 
-  <script src="script.js"></script>
+<!---SEGUNDO CABECHAJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO--> 
+
+  <div class="t1">
+    <h1>Materiais de Construção</h1>
+  </div>
+
+  <div class="representacao">
+    <img src="imagens/portas-janelas-pronta-entrega-geral.jpg" alt="Construção">
+    <h2>Materiais de Construção Indispensáveis: Do Início ao Acabamento</h2>
+    <p>
+      Ao planejar uma obra, seja para realizar um sonho ou executar um projeto arquitetônico, a escolha dos materiais é determinante para garantir resistência, longa vida útil e boa aparência ao resultado final. Entre os itens mais importantes estão as areias e pedras, blocos e tijolos de 9 furos, além de cimentos e argamassas.</p>
+
+      <h2>Areia e Pedra: A Base de Toda Construção</h2>
+
+      <p>Aqui você encontra areia e pedra de alta qualidade para sua obra, materiais essenciais na produção de concreto, argamassas e na realização de pavimentações</p>
+      <br> <br>
+      <div class="b1"><a href="#">Ver Mais</a></div>
+  </div>
+
+  <div class="titulos">
+    <h2>Torneiras:</h2>
+  </div>
+
+
+ <article>
+ <div class="opcoes-torneiras">
+
+
+        <a href="#">
+          <div class="torneira1"><img src="imagens/torneira1.jpg" alt="Torneiras">
+          <div class="descricao"><p>Torneira para banheiro compacta presmatic <br> <br> <br>
+          <strong>R$ 169,90</strong></p></div></div>
+        </a>
+
+        <a href="#">
+          <div class="torneira1"><img src="imagens/torneira2.webp" alt="Torneiras">
+          <div class="descricao"><p>Torneira para cozinha gourmet bancada Flexível <br> <br> <br>
+          <strong>R$ 129,90</strong></p></div></div>
+        </a>
+
+        <a href="#">
+          <div class="torneira1"><img src="imagens/torneira3.webp" alt="Torneiras">
+          <div class="descricao"><p>Torneira para cozinha gourmet bancada Flexível <br> <br> <br>
+          <strong>R$ 129,90</strong></p></div></div>
+        </a>
+
+        <a href="#">
+          <div class="torneira1"><img src="imagens/torneira4.webp" alt="Torneiras">
+          <div class="descricao"><p>Torneira para cozinha gourmet bancada Flexível <br> <br> <br>
+          <strong>R$ 129,90</strong></p></div></div>
+        </a>
+
+        <a href="#">
+          <div class="torneira1"><img id="trn1" src="imagens/torneira5.webp" alt="Torneiras">
+          <div class="descricao"><p>Torneira para cozinha gourmet bancada Flexível <br> <br> <br>
+          <strong>R$ 129,90</strong></p></div></div>
+        </a>
+        <a href="#">
+          <div class="torneira1"><img src="imagens/torneira6.jpeg" alt="Torneiras">
+          <div class="descricao"><p>Torneira para cozinha gourmet bancada Flexível <br> <br> <br>
+          <strong>R$ 129,90</strong></p></div></div>
+        </a>
+        <a href="#">
+          <div class="torneira1"><img src="imagens/torneira6.webp" alt="Torneiras">
+          <div class="descricao"><p>Torneira para cozinha gourmet bancada Flexível <br> <br> <br>
+          <strong>R$ 129,90</strong></p></div></div>
+        </a>
+
+       
+  </div>
+</article>
+
+
+
+
+<ul id="lista">
+  <li>html</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+  <li>React</li>
+</ul>
+
+</main>
+
+
+
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
+

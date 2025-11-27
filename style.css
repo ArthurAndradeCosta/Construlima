@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+#lista {
+  color: aliceblue;
+}
+
 :root {
   --cor-preto: #000000;
   --cor-laranja: #db6100;
@@ -7,25 +11,27 @@
   --cor-branco: #ffffff;
 }
 
+/* Reset e global */
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  background-color: var(--cor-preto);
+  background-color: var(--cor-branco);
 }
 
+/* Header */
 header {
   background-color: var(--cor-laranja);
   padding: 20px 40px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   color: var(--cor-branco);
-  flex-wrap: wrap;
   gap: 15px;
   min-height: 70px;
 }
@@ -48,27 +54,22 @@ header {
   text-align: center;
 }
 
-
+/* Search */
 .search-container {
   position: relative;
-  flex: 1 1 300px; 
-
- 
+  flex: 1 1 300px;
 }
-
 
 #search {
   width: 100%;
   height: 50px;
-  padding: 0 50px 0 15px; 
+  padding: 0 50px 0 15px;
   font-size: 1.3em;
   border-radius: 30px;
   border: none;
   outline: none;
   font-weight: 500;
-
 }
-
 
 .search-icon {
   position: absolute;
@@ -81,6 +82,7 @@ header {
   user-select: none;
 }
 
+/* Header links */
 .header-links {
   display: flex;
   align-items: center;
@@ -95,7 +97,7 @@ header a {
   text-align: center;
   line-height: 1.2;
   white-space: nowrap;
-  transition: 0.3s, color 0.3s;
+  transition: 0.3s;
   padding: 5px 8px;
   border-radius: 6px;
   display: flex;
@@ -116,10 +118,296 @@ header a:hover {
 
 #a1 {
   margin-left: 0;
-  
 }
 
-ul {
-    color: white;
+/* Submenu de categorias no topo */
+article.sub {
+  background-color: var(--cor-laranja);
+  text-align: left;
+  padding: 0 0 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
+article.sub a {
+  text-decoration: none;
+  color: var(--cor-branco);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+article.sub a:hover {
+  background-color: var(--cor-branco);
+  color: var(--cor-laranja);
+  transition: 0.3s;
+}
+
+/* --- Mega Menu --- */
+.menu-principal {
+  list-style: none;
+  display: flex;
+  background-color: var(--cor-laranja);
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.naosei {
+  position: relative;
+}
+
+.botao-menu {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cor-branco);
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botao-menu i.material-icons {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.botao-menu:hover {
+  background-color: var(--cor-branco);
+  color: var(--cor-laranja);
+  border-radius: 5px;
+}
+
+/* Submenu padrão (links pretos) */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  background-color: var(--cor-branco);
+  min-width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.submenu a {
+  color: var(--cor-preto);
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block;
+  white-space: nowrap;
+}
+
+.submenu a:hover {
+  color: var(--cor-laranja);
+}
+
+/* Mostrar submenu ao passar o mouse no desktop */
+.naosei:hover > .submenu {
+  display: flex;
+}
+
+/* Mega-menu específico */
+.mega-menu {
+  display: flex;
+  gap: 20px;
+  background-color: var(--cor-laranja); /* Fundo laranja */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.mega-menu .colunas {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mega-menu .colunas a {
+  color: var(--cor-preto);
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+.mega-menu .colunas a:hover {
+  color: var(--cor-laranja);
+}
+
+/* Imagem do mega-menu */
+.mega-menu .imagem {
+  display: flex;
+  align-items: center;
+}
+
+.mega-menu .imagem img {
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Submenu escondido por padrão */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;  /* fica escondido até hover */
+  flex-direction: row; /* para mostrar colunas + imagem lado a lado */
+  background-color: var(--cor-branco);
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 100;
+  gap: 20px;
+}
+
+/* Mostrar submenu ao passar o mouse (desktop) */
+.naosei:hover > .submenu {
+  display: flex;
+}
+
+
+/* Container de itens (exemplo: lista de produtos) */
+div.container {
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-gap: 10px;
+  text-align: center;
+  margin: auto;
+}
+
+div.item {
+  cursor: pointer;
+  padding: 22px;
+  background-color: white;
+}
+
+div.item img {
+  width: 100px;
+}
+
+div.item a {
+  text-decoration: none;
+  color: #db6100;
+  font-weight: bold;
+}
+
+div.t1 h1 {
+  color: #db6100;
+  margin: 30px;
+  font-size: 1.7em;
+}
+
+div.representacao {
+  padding: 20px;
+  border: 1px solid rgb(173, 173, 173);
+  margin: 10px;
+  border-radius: 10px;
+  color: #1a1a1a;
+ 
+}
+
+div.representacao a {
+  text-decoration: none;
+  color: #db6100;
+  border: 2px solid var(--cor-laranja);
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+div.b1 {
+  text-align: center;
+}
+
+div.representacao a:hover {
+  color: var(--cor-branco);
+  background-color: #db6100;
+}
+
+div.representacao h2 {
+  text-align: left;
+  margin: 10px 0px 4px 0px;
+}
+
+div.representacao p {
+  font-size: 0.9em;
+}
+
+div.representacao img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.titulos h2 {
+  color: var(--cor-laranja);
+  margin: 100px 0px 15px 15px;
+  font-size: 1.9em;
+}
+
+/*TORNEIRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
+
+.opcoes-torneiras {
+  color: black;
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 7px;
+  overflow-x: scroll;
+  display: flex;
+  flex-wrap: nowrap;   /* 🔥 impede quebrar linha */
+  overflow-x: auto;    /* 🔥 rolagem horizontal */
+  gap: 20px;           /* espaço entre as torneiras */
+  padding: 20px;
+}
+
+
+
+
+
+.torneira1 {
+  border: 1px solid rgb(173, 173, 173);
+  background-color: white;
+  width: 250px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.397);
+  cursor: pointer;
+ 
+  color: black;
+}
+
+.torneira1 img {
+  width: 200px;
+  padding: 20px;
+}
+
+.torneira1 img:hover {
+  width: 210px;
+  transition: 0.2s;
+}
+
+.descricao {
+  padding: 6px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.torneira1 strong {
+  color: #db6100;
+  margin: auto;
+}
+
+#trn1 {
+  height: 200px;
+}
+
+#trn1:hover {
+  height: 210px;
+}
