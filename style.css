@@ -1,5 +1,62 @@
 @charset "UTF-8";
 
+/* painel de resultados abaixo do campo de busca */
+.search-container {
+  position: relative; /* já tem, mas garante */
+  z-index: 50;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  padding: 10px;
+  max-height: 60vh;
+  overflow-y: auto;
+  display: none; /* mostra via JS */
+}
+
+/* estilo dos itens no dropdown (clones dos cards) */
+.search-results .produto {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #f0f0f0;
+  background: transparent;
+  width: 100%;
+  box-shadow: none;
+}
+
+.search-results .produto:last-child {
+  border-bottom: none;
+}
+
+.search-results .produto img {
+  width: 80px; /* miniatura no dropdown */
+  height: auto;
+  padding: 6px;
+}
+
+/* texto do produto se ajusta e não quebra layout */
+.search-results .descricao {
+  padding: 0;
+}
+
+/* mensagem quando nenhum resultado */
+.search-results .no-results {
+  padding: 12px;
+  color: #666;
+  text-align: center;
+}
+
+
+
+
 #lista {
   color: aliceblue;
 }
@@ -576,6 +633,7 @@ div.barra-lateral div.check {
   height: 500px;
   background-attachment: fixed;
   box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.767);
+  width: 100%;
 }
 
 .texto > h3 {
@@ -634,9 +692,7 @@ footer {
 
 .categoria {
   color: white;
-  margin-top: 85px;
-  margin-left: 50px;
-  text-align: center;
+  text-align: left;
   
 }
 
@@ -644,6 +700,8 @@ footer {
   text-align: right;
   margin-bottom: 10px;
   margin-right: 50px;
+  margin-top: 80px;
+  font-size: 1.4em;
 }
 
 .mail {
@@ -710,6 +768,86 @@ div.barra-lateral {
     width: 100%; /* deixa o card ocupar a coluna inteira */
   }
 
+.puxasaco {
+  font-size: 1.4em;
+}
+
+.fundo {
+  margin-top: 640px;
+  width: 100%;
+  overflow-x: auto;   /* habilita rolagem horizontal */
+  overflow-y: hidden; /* impede rolagem vertical dentro dela */
+  white-space: nowrap; /* impede quebrar e força rolagem */
+}
+
+.fundo .texto {
+  min-width: 300px; /* faz os elementos ficarem lado a lado */
+  white-space: normal; /* 🔥 permite quebra de linha */
+  display: inline-block;
+}
+
+
+footer {
+  width: 100%;
+  font-size: 0.8em;
+}
+
+#iemail {
+  width: 10vw;
+  height: 50px;
+  margin-left: -100px;
+}
+
+.enviar {
+  height: 50px;
+  width: 100px;
+}
+
+.mail h1 {
+  font-size: 1.4em;
+}
+
+.tudo {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  height: 100%;
+  width: 100%;
+}
+
+.loja h1, h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.atendimento h3 {
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.atendimento {
+  text-align: center;
+}
+
+.categoria h3 {
+  text-align: center;
+  width: 100%;
+  margin-top: 60px;
+  font-size: 1.4em;
+}
+
+.categoria p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+  html, body {
+    overflow-x: hidden; /* impede rolagem lateral */
+    width: 100%;
+  }
+
 }
 
 
@@ -727,4 +865,4 @@ div.barra-lateral {
 
 
 
-}
+

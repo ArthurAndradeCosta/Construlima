@@ -421,14 +421,6 @@ Atender, Entender e Surpreender você!</p>
 
 
 
-
-<ul id="lista" style="color: black;">
-  <li>html</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-  <li>React</li>
-</ul>
-
 </main>
 
 <!---BEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD-->
@@ -458,7 +450,7 @@ Atender, Entender e Surpreender você!</p>
     <div class="atendimento">
       
       <P>
-        <h3>ATENDIMENTO</h3>
+        <h3>ATENDIMENTO</h3>-
          Telefone: (31) 93343-1630 <br> <br>
          Whatsapp: (31) 94948-7499 <br> <br>
          E-mail: contratos@construlimas.com.br 
@@ -466,23 +458,115 @@ Atender, Entender e Surpreender você!</p>
     </div>
 
     <div class="categoria">
-      <h3>Categorias</h3>
-        Casa e Decoração  <br>
-        Pisos E Complementos <br>
-        Banheiro <br>
-        Pintura <br>
-        Cozinha E Área De Serviço <br>
-        Iluminação <br>
-        Climatização <br>
-        Ferramentas <br>
-        Jardinagem <br>
-        Portas E Janelas <br>
-        Churrasco E Lazer <br>
-        Hidráulica <br>
+          <h3>Categorias</h3>
+        <p>
+          Casa e Decoração <br>
+          Pisos E Complementos <br>
+          Banheiro <br>
+          Pintura <br>
+          Cozinha E Área De Serviço <br>
+          Iluminação <br>
+          Climatização <br>
+          Ferramentas <br>
+          Jardinagem <br>
+          Portas E Janelas <br>
+          Churrasco E Lazer <br>
+          Hidráulica <br>
+        </p>
     </div>
 
   </div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search');
+  const produtos = Array.from(document.querySelectorAll('.opcoes-produtos .produto'));
+  const opcoesProdutosContainer = document.querySelector('.opcoes-produtos');
+
+  // cria container de resultados dentro de .search-container
+  let resultsContainer = document.querySelector('.search-results');
+  if (!resultsContainer) {
+    resultsContainer = document.createElement('div');
+    resultsContainer.className = 'search-results';
+    document.querySelector('.search-container').appendChild(resultsContainer);
+  }
+
+  // função principal de filtro (chamada no evento input)
+  function filtrar() {
+    const q = searchInput.value.trim().toLowerCase();
+    resultsContainer.innerHTML = '';
+
+    if (q === '') {
+      // vazio -> esconder painel e mostrar a grade original
+      resultsContainer.style.display = 'none';
+      if (opcoesProdutosContainer) opcoesProdutosContainer.style.display = '';
+      return;
+    }
+
+    // procura correspondências
+    const matches = produtos.filter(prod => {
+      return prod.innerText.toLowerCase().includes(q);
+    });
+
+    if (matches.length === 0) {
+      const no = document.createElement('div');
+      no.className = 'no-results';
+      no.textContent = 'Nenhum produto encontrado.';
+      resultsContainer.appendChild(no);
+    } else {
+      matches.forEach(m => {
+        const clone = m.cloneNode(true);
+        clone.classList.add('result-item');
+        // ajusta estilo do clone para o dropdown
+        clone.style.display = 'flex';
+        clone.style.width = '100%';
+        // remove possíveis sombras/estilos indesejados
+        clone.style.boxShadow = 'none';
+        resultsContainer.appendChild(clone);
+      });
+    }
+
+    // mostra painel de resultados e esconde a grade principal
+    resultsContainer.style.display = 'block';
+    if (opcoesProdutosContainer) opcoesProdutosContainer.style.display = 'none';
+  }
+
+  // evento de input (digitação)
+  searchInput.addEventListener('input', filtrar);
+
+  // fechar resultados ao clicar fora do search-container
+  document.addEventListener('click', function(e) {
+    const searchContainer = document.querySelector('.search-container');
+    if (!searchContainer.contains(e.target)) {
+      resultsContainer.style.display = 'none';
+      if (opcoesProdutosContainer) opcoesProdutosContainer.style.display = '';
+    }
+  });
+
+  // manter comportamento do seu código de submenu (integração)
+  const botoesSubmenu = document.querySelectorAll('.naosei > .botao-menu');
+  botoesSubmenu.forEach(botao => {
+    botao.addEventListener('click', function(e) {
+      e.preventDefault();
+      const submenu = this.parentElement.querySelector('.submenu');
+      if (submenu) {
+        submenu.style.display = (submenu.style.display === 'flex') ? 'none' : 'flex';
+      }
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    botoesSubmenu.forEach(botao => {
+      const submenu = botao.parentElement.querySelector('.submenu');
+      if(submenu && !botao.contains(e.target) && !submenu.contains(e.target)){
+        submenu.style.display = 'none';
+      }
+    });
+  });
+
+});
+</script>
 
 
 <script src="script.js"></script>
