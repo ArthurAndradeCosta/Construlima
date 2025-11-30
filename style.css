@@ -890,14 +890,6 @@ footer {
   min-height: 260px; /* garantir que apareça */
 }
 
-/* 9) Ajustes responsivos extra */
-@media (max-width: 420px) {
-  .opcoes-produtos .produto img {
-    height: 180px; /* pode ajustar conforme preferir */
-  }
-  .fundo { min-height: 200px; }
-}
-
 }
 
 
