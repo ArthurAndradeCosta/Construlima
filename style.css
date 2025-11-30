@@ -860,42 +860,27 @@ footer {
 }
 
 /* Ajuste para celulares */
-/* ==== CORREÇÃO MOBILE ==== */
 @media (max-width: 600px) {
 
-  /* Grid responsivo */
-  .opcoes-produtos {
+  /* Produtos ocupam 100% da tela no mobile */
+  #produtos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas no celular */
-    gap: 15px;
-    padding: 10px;
-    overflow-x: hidden; /* tira rolagem lateral */
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
   }
 
-  /* Cards sempre do tamanho certo */
-  .opcoes-produtos .produto {
+  #produtos .produto {
     width: 100%;
     max-width: 100%;
-    margin: 0;
-    border-radius: 10px;
+    margin: auto;
   }
 
-  /* Imagens proporcionais */
-  .opcoes-produtos .produto img {
+  #produtos .produto img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 10px 10px 0 0;
   }
-
-  /* Corrigir fundo preto */
-  .fundo,
-  .imagen {
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-  }
-}
 
   /* Garantir que a imagem de fundo apareça corretamente */
   .fundo {
@@ -904,6 +889,92 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
   }
+}
+
+/* ===========================
+   FIX RESPONSIVO RÁPIDO — COLAR NO FINAL DO CSS
+   =========================== */
+
+/* 1) Força grid e evita conflitos com display:flex anteriores */
+.opcoes-produtos {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* 2 colunas no celular */
+  gap: 15px !important;
+  padding: 10px !important;
+  width: 100% !important;
+  box-sizing: border-box;
+  align-items: start;
+  overflow-x: hidden !important;
+}
+
+/* 2) Links ao redor dos cards = bloco (evita inline weirdness) */
+.opcoes-produtos > a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 3) Cards ocupam 100% da célula do grid, sem larguras fixas */
+.opcoes-produtos .produto {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 260px; /* ajusta conforme necessário */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* 4) Imagens responsivas e cortadas de forma consistente */
+.opcoes-produtos .produto img {
+  display: block;
+  width: 100% !important;
+  height: 160px;            /* altura fixa para uniformizar cards */
+  object-fit: cover;        /* mantém proporção e preenche o card */
+  border-radius: 8px 8px 0 0;
+}
+
+/* 5) Descrição e preço ocupam o resto do card */
+.opcoes-produtos .descricao {
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* 6) Override genérico para evitar regras que fixem 200px/250px */
+.produto, .torneira1, img#cimento, .produto img {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* 7) Evitar rolagem lateral geral */
+html, body {
+  overflow-x: hidden !important;
+}
+
+/* 8) Corrige .fundo no mobile (background-attachment: fixed quebra em muitos celulares) */
+.fundo {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important; /* importante para mobile */
+  min-height: 260px; /* garantir que apareça */
+}
+
+/* 9) Ajustes responsivos extra */
+@media (max-width: 420px) {
+  .opcoes-produtos {
+    grid-template-columns: 1fr !important; /* em telas muito pequenas, 1 coluna */
+  }
+  .opcoes-produtos .produto img {
+    height: 180px; /* pode ajustar conforme preferir */
+  }
+  .fundo { min-height: 200px; }
+}
 
 
 
