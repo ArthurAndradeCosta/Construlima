@@ -519,9 +519,8 @@ img#cimento:hover {
 .produto {
   border: 1px solid rgb(173, 173, 173);
   background-color: white;
-  flex: 1 1 150px;
-  max-width: 250px;
-  height: auto;
+  width: 250px;
+  height: 330px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.397);
   cursor: pointer;
   color: black;
@@ -529,7 +528,7 @@ img#cimento:hover {
 }
 
 .produto img {
- width: 100%;
+  width: 200px;
   padding: 20px;
   height: auto;
   overflow: visible;
@@ -776,6 +775,18 @@ div.barra-lateral {
 
   .produto {
     width: 100%; /* deixa o card ocupar a coluna inteira */
+  }
+
+  #cimento img {
+    width: 100px;
+  }
+
+ #bugado img {
+  width: 150px;
+}
+
+  .produto img {
+    max-width: 150px;
   }
 
 .puxasaco {
