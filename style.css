@@ -888,6 +888,7 @@ footer {
     background-size: contain;
     background-position: top;
     background-repeat: no-repeat;
+    background-attachment: scroll;
   }
 }
 
