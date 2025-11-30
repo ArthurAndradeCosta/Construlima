@@ -394,6 +394,181 @@ li {
     margin-bottom: 5px;
 }
 
+/* ---------- correções gerais para responsividade e prevenção de bugs ---------- */
+
+/* garante que o grid redimensione linhas automaticamente (evita cortes/overlap) */
+.pai {
+  grid-auto-rows: auto;
+  gap: 16px;
+}
+
+/* imagens sempre proporcionais e centralizadas dentro da área */
+.imagem img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* evita que o campo de busca e resultados fiquem sob outros elementos */
+header { position: relative; z-index: 60; }
+.search-container { z-index: 70; }
+.search-results { z-index: 80; }
+
+/* remove alturas fixas problemáticas (se tiver alguma) */
+.pai > * { min-height: 0; }
+
+/* ---------- Layout responsivo (reflow controlado) ---------- */
+
+/* > Desktop grande: mantém seu grid original (sem mudanças) */
+/* Não é necessário colocar regras aqui se já está ok */
+
+/* Tablets (<= 1024px) — reorganiza para 2 colunas; texto e descrição ocupam as 2 colunas */
+@media screen and (max-width: 1024px) {
+  .pai {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .menu { grid-column: 1 / -1; } /* header sempre cobrindo todas as colunas */
+  .texto { grid-column: 1 / -1; margin: 20px 24px; }
+  .imagem { grid-column: 1 / 2; margin: 10px 24px; }
+  .compra { grid-column: 2 / 3; margin: 10px 24px; }
+  .descricao { grid-column: 1 / -1; margin: 10px 24px 30px 24px; }
+
+  .imagem img { max-width: 95%; }
+  .comprar, .add, .favoritar { width: 40vw; min-width: 160px; }
+}
+
+/* Tablets/Phablets (<= 768px) — empilha em 1 coluna (reflow): imagem, compra, texto, descricao */
+@media screen and (max-width: 768px) {
+  .pai {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .menu { grid-column: 1 / -1; }
+  .texto { grid-column: 1 / -1; margin: 14px 16px; font-size: 1.3rem; text-align: center; }
+  .imagem { grid-column: 1 / -1; margin: 6px 16px; }
+  .compra { grid-column: 1 / -1; margin: 6px 16px; order: 0; } /* order apenas para leitura; grid ignora, mas keep for clarity */
+  .descricao { grid-column: 1 / -1; margin: 10px 16px 30px 16px; }
+
+  /* reduz um pouco o tamanho dos botões */
+  .comprar, .add, .favoritar {
+    width: 85%;
+    display: inline-block;
+    min-width: 0;
+  }
+
+  /* ajuste do header para caber em telas pequenas */
+  header {
+    padding: 14px 16px;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .search-container { flex: 1 1 auto; width: 100%; }
+  #search { height: 44px; font-size: 1.05em; padding-right: 48px; }
+}
+
+/* Celulares pequenos (<= 480px) — últimos ajustes finos */
+@media screen and (max-width: 480px) {
+
+  .texto { font-size: 1.15rem; margin: 10px 10px; }
+
+  h2 { font-size: 1.3rem; }
+
+  .imagem img { max-width: 100%; }
+
+  .botao { width: auto; padding: 6px 10px; }
+
+  .valor { font-size: 1.5rem; }
+
+  .comprar, .add, .favoritar { width: 92%; padding: 8px; font-size: 0.95rem; }
+  
+  .borda { width: auto; padding: 8px; }
+}
+
+/* === MOBILE: forçar ordem: menu -> texto -> imagem -> compra -> descricao === */
+@media screen and (max-width: 768px) {
+  .pai {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 12px;
+  }
+
+  /* header sempre no topo */
+  .menu { grid-column: 1 / -1; grid-row: 1; }
+
+  /* texto logo após o header */
+  .texto {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 12px 14px;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  /* imagem ANTES da compra (logo após o texto) */
+  .imagem {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin: 6px 14px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* garante que a img ocupe corretamente o espaço e não suma */
+  .imagem img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* evita corte */
+  }
+
+  /* compra logo abaixo da imagem */
+  .compra {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin: 8px 14px;
+    background-color: white;
+    z-index: 10;
+  }
+
+  /* descrição por último */
+  .descricao {
+    grid-column: 1 / -1;
+    grid-row: 5;
+    margin: 10px 14px 30px 14px;
+  }
+
+  /* ajustes finos de botões e header */
+  header {
+    padding: 12px 14px;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .search-container { width: 100%; flex: 1 1 auto; }
+  #search { height: 44px; font-size: 1.02em; padding-right: 48px; }
+
+  .comprar, .add, .favoritar {
+    width: 92%;
+    display: block;
+    margin: 8px auto;
+    box-sizing: border-box;
+  }
+
+  .borda { width: auto; padding: 8px; display: inline-flex; gap: 8px; align-items: center; }
+}
+
+
+
+
 
 
     </style>
@@ -413,7 +588,7 @@ li {
                   </div>
                 
                   <nav class="header-links">
-                    <a href="#" id="a1"><i class="material-icons">person</i> Fale <br>Conosco</a>
+                    <a href="index.html" id="a1"><i class="material-icons">home</i> Início <br></a>
                     <a href="#"><i class="material-icons">add_shopping_cart</i> Meu <br>Carrinho</a>
                   </nav>
                 </header>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ConstruLi&ma — Fale Conosco</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+
+/* --- Estilo da página de contato --- */
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contato-container {
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px #00000020;
+}
+
+.contato-container h2 {
+  color: #db6100;
+  margin-bottom: 10px;
+}
+
+.contato-container p {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Formulário */
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border: 2px solid #db6100;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #000;
+}
+
+.form-group input[type="submit"] {
+  background: #db6100;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.form-group input[type="submit"]:hover {
+  background: #a14700;
+}
+
+/* Informações de contato */
+.contato-info {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f6f6f6;
+  border-left: 5px solid #db6100;
+  border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .header-links {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .search-container {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .mail {
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    margin: auto;
+  }
+
+  .mail input {
+    width: 100%;
+  }
+
+  .tudo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+div.mail input {
+    margin: auto;
+  }
+
+#iemail {
+   margin-left: 25%;
+}
+
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- CABEÇALHO (reutiliza seu header) -->
+  <header>
+    <div class="tituloinicial">
+      <h1>ConstruLi&ma</h1>
+      <h4>Materiais de Construção</h4>
+    </div>
+
+   
+
+    <nav class="header-links">
+      <a href="index.html" id="a1"><i class="material-icons">home</i> Início <br></a>
+      <a href="#"><i class="material-icons">add_shopping_cart</i> Meu <br>Carrinho</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="contato-container">
+      <h2>Fale Conosco</h2>
+      <p>Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
+
+      <form action="#" method="post" class="form-contato">
+        <div class="form-group">
+          <label for="nome">Nome:</label><br>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail:</label><br>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone / WhatsApp:</label><br>
+          <input type="text" id="telefone" name="telefone">
+        </div>
+
+        <div class="form-group">
+          <label for="mensagem">Mensagem:</label><br>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" value="Enviar Mensagem">
+        </div>
+      </form>
+
+      <div class="contato-info">
+        <h3>Ou fale diretamente conosco:</h3>
+        <p><strong>Telefone/Whatsapp:</strong> (31) 93343-1630 / (31) 94948-7499</p>
+        <p><strong>E-mail:</strong> contratos@construlimas.com.br</p>
+        <p><strong>Endereço:</strong> Rua Pio José Fernandes, 121, Centro, Desterro de Entre Rios – MG</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="mail">
+      <div>
+        <h1>Assine nossa Newsletter</h1>
+        <p>E RECEBA NOSSOS EMAILS</p>
+      </div>
+      <input type="email" name="email" id="iemail" placeholder="Digite seu E-mail">
+      <input type="submit" class="enviar" value="Enviar">
+    </div>
+
+    <div class="tudo">
+      <div class="loja">
+        <h1>ConstruLi&ma</h1>
+        <h3>AGRADECIMENTOS</h3>
+        <p>
+          A Construlima agradece sua visita. <br>
+          Trabalhamos todos os dias para oferecer materiais de construção de qualidade, <br>
+          sempre com confiança, bom atendimento e compromisso com a comunidade. <br>
+          © 2025 Construlima – Todos os direitos reservados
+        </p>
+      </div>
+
+      <div class="atendimento">
+        <h3>ATENDIMENTO</h3>
+        <p>
+          Telefone: (31) 93343-1630 <br><br>
+          Whatsapp: (31) 94948-7499 <br><br>
+          E-mail: contratos@construlimas.com.br
+        </p>
+      </div>
+
+      <div class="categoria">
+        <h3>Categorias</h3>
+        <p>
+          Casa e Decoração <br>
+          Pisos E Complementos <br>
+          Banheiro <br>
+          Pintura <br>
+          Cozinha E Área De Serviço <br>
+          Iluminação <br>
+          Climatização <br>
+          Ferramentas <br>
+          Jardinagem <br>
+          Portas E Janelas <br>
+          Churrasco E Lazer <br>
+          Hidráulica <br>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
