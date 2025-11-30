@@ -645,6 +645,14 @@ div.barra-lateral div.check {
   width: 100%;
 }
 
+.fundo {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important; /* importante para mobile */
+  min-height: 260px; /* garantir que apareça */
+}
+
 .texto > h3 {
   margin-bottom: 10px;
 }
@@ -858,18 +866,6 @@ footer {
   }
 
 }
-
-/* Ajuste para celulares */
-
-
-.fundo {
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-attachment: scroll !important; /* importante para mobile */
-  min-height: 260px; /* garantir que apareça */
-}
-
 
 
 
