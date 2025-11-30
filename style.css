@@ -886,7 +886,7 @@ footer {
   .fundo {
     background-image: url(imagens/sebraepe_sebraepe_image_763.jpeg);
     background-size: contain;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
   }
 }
