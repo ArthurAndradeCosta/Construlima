@@ -860,31 +860,51 @@ footer {
 }
 
 /* Ajuste para celulares */
+/* ==== CORREÇÃO MOBILE ==== */
 @media (max-width: 600px) {
 
-  /* Produtos ocupam 100% da tela no mobile */
-  #produtos {
+  /* Grid responsivo */
+  .opcoes-produtos {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 10px;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas no celular */
+    gap: 15px;
+    padding: 10px;
+    overflow-x: hidden; /* tira rolagem lateral */
   }
 
-  #produtos .produto {
+  /* Cards sempre do tamanho certo */
+  .opcoes-produtos .produto {
     width: 100%;
     max-width: 100%;
-    margin: auto;
+    margin: 0;
+    border-radius: 10px;
   }
 
-  #produtos .produto img {
+  /* Imagens proporcionais */
+  .opcoes-produtos .produto img {
     width: 100%;
     height: auto;
     object-fit: cover;
+    border-radius: 10px 10px 0 0;
   }
 
-  /* Garantir que a imagem de fundo apareça corretamente */
-  
+  /* Corrigir fundo preto */
+  .fundo,
+  .imagen {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
 }
+
+  /* Garantir que a imagem de fundo apareça corretamente */
+  .fundo {
+    background-image: url(imagens/sebraepe_sebraepe_image_763.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
 
 
 
