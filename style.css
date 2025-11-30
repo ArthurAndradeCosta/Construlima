@@ -892,9 +892,6 @@ footer {
 
 /* 9) Ajustes responsivos extra */
 @media (max-width: 420px) {
-  .opcoes-produtos {
-    grid-template-columns: 1fr !important; /* em telas muito pequenas, 1 coluna */
-  }
   .opcoes-produtos .produto img {
     height: 180px; /* pode ajustar conforme preferir */
   }
