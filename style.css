@@ -633,7 +633,7 @@ div.barra-lateral div.check {
 }
 
 .fundo {
-  background-image: url(img/imagens/sebraepe_sebraepe_image_763.jpeg);
+  background-image: url(imagens/sebraepe_sebraepe_image_763.jpeg);
   background-position: right center;
   background-size: cover;
   display: flex;
@@ -885,7 +885,7 @@ footer {
   /* Garantir que a imagem de fundo apareça corretamente */
   .fundo {
     background-image: url(imagens/sebraepe_sebraepe_image_763.jpeg);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
   }
