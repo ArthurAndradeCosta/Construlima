@@ -633,7 +633,7 @@ div.barra-lateral div.check {
 }
 
 .fundo {
-  background-image: url(imagens/sebraepe_sebraepe_image_763.jpeg);
+  background-image: url(img/imagens/sebraepe_sebraepe_image_763.jpeg);
   background-position: right center;
   background-size: cover;
   display: flex;
@@ -777,18 +777,6 @@ div.barra-lateral {
     width: 100%; /* deixa o card ocupar a coluna inteira */
   }
 
-  #cimento img {
-    width: 100px;
-  }
-
- #bugado img {
-  width: 150px;
-}
-
-  .produto img {
-    max-width: 150px;
-  }
-
 .puxasaco {
   font-size: 1.4em;
 }
@@ -869,6 +857,38 @@ footer {
     width: 100%;
   }
 
+}
+
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+
+  /* Produtos ocupam 100% da tela no mobile */
+  #produtos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  #produtos .produto {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  #produtos .produto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Garantir que a imagem de fundo apareça corretamente */
+  .fundo {
+    background-image: url(imagens/sebraepe_sebraepe_image_763.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 
