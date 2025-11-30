@@ -520,7 +520,7 @@ img#cimento:hover {
   border: 1px solid rgb(173, 173, 173);
   background-color: white;
   max-width: 250px;
-  max-height: 330px;
+  height: auto;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.397);
   cursor: pointer;
   color: black;
@@ -528,7 +528,7 @@ img#cimento:hover {
 }
 
 .produto img {
-  max-width: 200px;
+ width: 100%;
   padding: 20px;
   height: auto;
   overflow: visible;
