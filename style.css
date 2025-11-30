@@ -528,7 +528,7 @@ img#cimento:hover {
 }
 
 .produto img {
-  width: 200px;
+  max-width: 200px;
   padding: 20px;
   height: auto;
   overflow: visible;
