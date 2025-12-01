@@ -692,7 +692,6 @@ footer {
 .loja > h3 {
   padding: 10px 40px 10px 40px;
   color: white;
-  border: 2px solid gren;
 }
 
 .atendimento {
@@ -759,12 +758,21 @@ footer {
   color: var(--cor-laranja);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
+
+  .menu-principal {
+    display: none;
+  }
+
+  summary::-webkit
+
+  .botao-menu i {
+    display: none;
+  }
  
-.menu-principal {
-  display: block;
-  width: 100%;
-}
+  ul {
+    list-style: none;
+  }
 
 .menu-principal a {
   width: 100%;
@@ -791,7 +799,7 @@ div.barra-lateral {
 }
 
 .fundo {
-  margin-top: 2750px;
+  margin-top: 1100px;
   width: 100%;
   overflow-x: auto;   /* habilita rolagem horizontal */
   overflow-y: hidden; /* impede rolagem vertical dentro dela */
@@ -864,6 +872,26 @@ footer {
   html, body {
     overflow-x: hidden; /* impede rolagem lateral */
     width: 100%;
+  }
+
+#bugadocell {
+  display: none;
+}
+
+}
+
+@media (min-width: 800px) and (max-width: 1300px) {
+
+
+
+  .fundo {
+    margin-top: 800px;
+  }
+
+  div.opcoes-produtos {
+    display: grid !important; 
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0px;
   }
 
 
