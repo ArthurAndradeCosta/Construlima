@@ -776,9 +776,10 @@ div.barra-lateral {
 }
   div.opcoes-produtos {
     display: grid !important;  /* força o grid no mobile */
-    grid-template-columns: repeat(2, 1fr); /* 🔥 2 colunas */
+    grid-template-columns: repeat(1, 1fr); /* 🔥 2 colunas */
     gap: 15px;
     padding: 20px;
+    margin-left: 80%;
   }
 
   .produto {
@@ -790,7 +791,7 @@ div.barra-lateral {
 }
 
 .fundo {
-  margin-top: 640px;
+  margin-top: 2750px;
   width: 100%;
   overflow-x: auto;   /* habilita rolagem horizontal */
   overflow-y: hidden; /* impede rolagem vertical dentro dela */
@@ -864,6 +865,7 @@ footer {
     overflow-x: hidden; /* impede rolagem lateral */
     width: 100%;
   }
+
 
 }
 
