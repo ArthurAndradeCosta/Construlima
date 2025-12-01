@@ -758,13 +758,17 @@ footer {
   color: var(--cor-laranja);
 }
 
-@media screen and (max-width: 800px) {
+@media (min-width: 200px) and (max-width: 800px) {
 
   .menu-principal {
     display: none;
   }
 
-  summary::-webkit
+  summary {
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
 
   .botao-menu i {
     display: none;
@@ -883,6 +887,9 @@ footer {
 @media (min-width: 800px) and (max-width: 1300px) {
 
 
+  summary {
+    display: none;
+  }
 
   .fundo {
     margin-top: 800px;
